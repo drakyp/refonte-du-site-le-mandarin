@@ -173,7 +173,7 @@ const Menu = () => {
     {
       name: "Menu Thaï",
       subtitle: "Disponible midi & soir (sur place uniquement)",
-      tag: "Tradition Thaïe",
+      tag: "Tradition Thaï",
       choice: "Entrée + Plat ou Plat + Dessert",
       sections: [
         { label: "Entrée au choix", items: "Salade thaïlandaise, Soupe de poulet citronnelle ou Nems chauds" },

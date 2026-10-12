@@ -229,6 +229,7 @@ const Menu = () => {
                   alt={dish.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute top-3 right-3 bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-sm shadow-sm">
                   {dish.badge}

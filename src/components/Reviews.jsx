@@ -4,19 +4,22 @@ import { Star, StarHalf } from './icons';
 const Reviews = () => {
   const reviews = [
     {
-      name: "Sophie M.",
-      date: "il y a 2 semaines",
-      text: "Une institution à Saint-Germain ! Les brochettes de poulet sont incroyables et le service est toujours aussi chaleureux après toutes ces années.",
+      name: "Carla Forly",
+      date: "il y a 5 mois",
+      tag: "Avis vérifié",
+      text: "Mention spéciale pour cette adresse désormais incontournable. Un plaisir de se faire servir par Khul qui est aussi drôle que gentil. La cuisine est authentique et délicieuse, un des meilleurs restaurants dans lequel j’ai mangé. Les prix défient toute concurrence, n’importe qui pourra y aller et se sentir à la maison.",
     },
     {
-      name: "Jean-Baptiste L.",
-      date: "il y a 1 mois",
-      text: "Probablement l'un des meilleurs canards laqués de Paris. L'ambiance feutrée est parfaite pour un dîner en amoureux. Je recommande les yeux fermés.",
+      name: "Sabine",
+      date: "il y a 1 an",
+      tag: "Local Guide",
+      text: "Cela faisait des années que je n’étais pas venue : j’avais pour habitude d’y aller plus jeune avec mes parents. Comme dans mes souvenirs, les plats sont excellents, le service est plutôt rapide. Le poulet coco est à tomber par terre ainsi que les crevettes au basilic : c’est très bon. Les prix sont raisonnables pour le quartier. Allez-y les yeux fermés !",
     },
     {
-      name: "Claire D.",
+      name: "Christophe Chleide",
       date: "il y a 3 mois",
-      text: "Le Lok Lak est divin, la viande fond dans la bouche. Un rapport qualité-prix rare dans ce quartier. Toujours un plaisir d'y retourner.",
+      tag: "Local Guide",
+      text: "Plats succulents : potage piquant tout en saveur, excellent bœuf basilic pimenté et caramélisé à souhait, très bons raviolis, canard impeccable. Une réussite au niveau de la cuisine et service bien sympathique. À faire et refaire !",
     }
   ];
 
@@ -69,14 +72,21 @@ const Reviews = () => {
                 </p>
               </div>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-brand-border">
-                <div className="w-10 h-10 rounded-full bg-brand-gold-light border border-brand-gold/30 flex items-center justify-center text-brand-gold font-serif font-bold text-sm">
-                  {review.name.charAt(0)}
+              <div className="flex items-center justify-between pt-4 border-t border-brand-border">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-brand-gold-light border border-brand-gold/30 flex items-center justify-center text-brand-gold font-serif font-bold text-sm">
+                    {review.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="text-brand-dark font-semibold text-sm">{review.name}</h4>
+                    <p className="text-brand-muted text-xs">{review.date}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-brand-dark font-semibold text-sm">{review.name}</h4>
-                  <p className="text-brand-muted text-xs">{review.date}</p>
-                </div>
+                {review.tag && (
+                  <span className="text-[10px] font-semibold text-brand-gold bg-brand-warm border border-brand-border px-2 py-0.5 rounded-full uppercase tracking-wider">
+                    {review.tag}
+                  </span>
+                )}
               </div>
             </div>
           ))}

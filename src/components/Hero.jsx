@@ -10,6 +10,9 @@ const Hero = () => {
         <img 
           src={heroImg} 
           alt="Ambiance restaurant Le Mandarin Saint-Germain" 
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
           className="w-full h-full object-cover object-center scale-105 animate-ken-burns"
         />
         {/* Dégradé sophistiqué qui se fond en bas vers le fond crème */}

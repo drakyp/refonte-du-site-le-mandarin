@@ -14,6 +14,8 @@ const History = () => {
                 src={historyImg} 
                 alt="" 
                 aria-hidden="true"
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover object-[center_25%] scale-110 blur-[14px] opacity-80"
               />
               
@@ -21,6 +23,8 @@ const History = () => {
               <img 
                 src={historyImg} 
                 alt="Le Chef du Mandarin Saint-Germain maîtrisant la flamme du wok" 
+                loading="lazy"
+                decoding="async"
                 className="relative z-[1] w-full h-full object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105"
                 style={{
                   maskImage: 'linear-gradient(to top, black 65%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.15) 96%, transparent 100%)',

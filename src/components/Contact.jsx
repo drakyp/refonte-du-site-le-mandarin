@@ -1,105 +1,114 @@
 import React from 'react';
-import { MapPin, Clock, PhoneCall, Info, Train } from 'lucide-react';
+import { MapPin, Clock, PhoneCall, Info, Train } from './icons';
 import OpenStatus from './OpenStatus';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-[#0a0a0a]">
+    <section id="contact" className="py-24 bg-brand-warm/30 border-t border-brand-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           
           <div>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-[1px] w-12 bg-brand-red"></div>
-              <span className="text-brand-red uppercase tracking-widest text-sm font-semibold">Informations</span>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-[2px] w-8 bg-brand-red"></div>
+              <span className="text-brand-red uppercase tracking-widest text-xs font-bold">Informations Pratiques</span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl text-white mb-10">
-              Nous Rendre Visite
+            
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-dark mb-8 leading-tight">
+              Venir Nous Rendre Visite
             </h2>
 
-            <div className="space-y-8">
-              <div className="flex items-start gap-4 group">
-                <div className="mt-1 p-3 bg-brand-dark border border-gray-800 text-brand-red group-hover:border-brand-red/50 group-hover:bg-brand-red/5 transition-all">
-                  <MapPin size={24} />
+            <div className="space-y-6">
+              {/* Adresse */}
+              <div className="flex items-start gap-4 p-5 bg-white border border-brand-border rounded-sm shadow-sm hover:border-brand-gold/60 transition-colors">
+                <div className="p-3 bg-brand-warm border border-brand-border text-brand-red rounded-sm shrink-0">
+                  <MapPin size={22} />
                 </div>
                 <div>
-                  <h3 className="text-white font-medium text-lg mb-1">Adresse</h3>
-                  <p className="text-gray-400 font-light">
+                  <h3 className="text-brand-dark font-semibold text-base mb-1">Adresse</h3>
+                  <p className="text-brand-charcoal text-sm leading-relaxed">
                     5 Rue de Montfaucon<br />
                     75006 Paris, France
                   </p>
+                  <span className="text-brand-muted text-xs block mt-1">Au cœur de Saint-Germain-des-Prés</span>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 group">
-                <div className="mt-1 p-3 bg-brand-dark border border-gray-800 text-brand-red group-hover:border-brand-red/50 group-hover:bg-brand-red/5 transition-all">
-                  <Train size={24} />
+              {/* Métro */}
+              <div className="flex items-start gap-4 p-5 bg-white border border-brand-border rounded-sm shadow-sm hover:border-brand-gold/60 transition-colors">
+                <div className="p-3 bg-brand-warm border border-brand-border text-brand-red rounded-sm shrink-0">
+                  <Train size={22} />
                 </div>
                 <div>
-                  <h3 className="text-white font-medium text-lg mb-1">Accès Métro</h3>
-                  <p className="text-gray-400 font-light text-sm">
-                    <span className="inline-block w-4 h-4 bg-[#CEA631] text-brand-dark text-xs font-bold text-center leading-4 rounded-full mr-1">10</span> Mabillon (1 min à pied)<br />
-                    <span className="inline-block w-4 h-4 bg-[#E0B0FF] text-brand-dark text-xs font-bold text-center leading-4 rounded-full mr-1 mt-2">4</span> Saint-Germain-des-Prés (3 min à pied)
-                  </p>
+                  <h3 className="text-brand-dark font-semibold text-base mb-1.5">Accès Métro</h3>
+                  <div className="space-y-1.5 text-sm">
+                    <p className="flex items-center gap-2 text-brand-charcoal">
+                      <span className="w-5 h-5 bg-[#CEA631] text-black text-xs font-bold flex items-center justify-center rounded-full shrink-0">10</span>
+                      <span><strong>Mabillon</strong> (à 1 minute à pied)</span>
+                    </p>
+                    <p className="flex items-center gap-2 text-brand-charcoal">
+                      <span className="w-5 h-5 bg-[#C9519A] text-white text-xs font-bold flex items-center justify-center rounded-full shrink-0">4</span>
+                      <span><strong>Saint-Germain-des-Prés</strong> (à 3 minutes à pied)</span>
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 group">
-                <div className="mt-1 p-3 bg-brand-dark border border-gray-800 text-brand-red group-hover:border-brand-red/50 group-hover:bg-brand-red/5 transition-all">
-                  <Clock size={24} />
+              {/* Horaires */}
+              <div className="flex items-start gap-4 p-5 bg-white border border-brand-border rounded-sm shadow-sm hover:border-brand-gold/60 transition-colors">
+                <div className="p-3 bg-brand-warm border border-brand-border text-brand-red rounded-sm shrink-0">
+                  <Clock size={22} />
                 </div>
-                <div>
-                  <h3 className="text-white font-medium text-lg mb-1">Horaires d'Ouverture</h3>
-                  <p className="text-gray-400 font-light mb-2">
-                    Mardi au Dimanche<br />
-                    12h00 - 15h00<br />
-                    18h00 - 23h00
-                  </p>
-                  <p className="text-brand-red font-medium text-sm mb-3">Fermé le lundi</p>
+                <div className="flex-grow">
+                  <h3 className="text-brand-dark font-semibold text-base mb-1">Horaires de Service</h3>
+                  <div className="text-brand-charcoal text-sm leading-relaxed mb-1">
+                    <p><strong>Mardi au Dimanche</strong> :</p>
+                    <p className="pl-2">Déjeuner : 12h00 – 15h00</p>
+                    <p className="pl-2">Dîner : 18h00 – 23h00</p>
+                    <p className="text-brand-red font-medium text-xs mt-1">Fermé le Lundi</p>
+                  </div>
                   <OpenStatus />
                 </div>
               </div>
-
             </div>
 
-            <div className="mt-12">
+            <div className="mt-8">
               <a 
                 href="tel:0143290714" 
-                className="inline-flex items-center gap-3 px-8 py-4 bg-brand-red text-white hover:bg-red-700 transition-all font-semibold uppercase text-sm tracking-widest shadow-lg shadow-brand-red/20 w-full sm:w-auto justify-center"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-red text-white hover:bg-brand-red-hover transition-all font-semibold uppercase text-xs tracking-widest shadow-md rounded-sm w-full sm:w-auto"
               >
-                <PhoneCall size={20} />
-                01 43 29 07 14
+                <PhoneCall size={18} />
+                Appeler le 01 43 29 07 14
               </a>
             </div>
           </div>
 
+          {/* Colonne droite : Carte & Renseignements */}
           <div className="flex flex-col gap-6">
-            <div className="relative h-[350px] w-full rounded-sm overflow-hidden border border-gray-800 bg-brand-dark group">
+            <div className="relative h-[340px] sm:h-[400px] w-full rounded-sm overflow-hidden border border-brand-border bg-white shadow-md">
               <iframe 
                 src="https://maps.google.com/maps?q=5%20Rue%20de%20Montfaucon,%2075006%20Paris&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
-                style={{ border: 0, filter: 'grayscale(100%) invert(92%) contrast(83%)' }} 
+                style={{ border: 0 }} 
                 allowFullScreen="" 
                 loading="lazy"
-                title="Carte d'accès Le Mandarin Saint-Germain"
-                className="transition-all duration-700 group-hover:filter-none"
+                title="Plan d'accès Le Mandarin Saint-Germain"
+                className="w-full h-full"
               ></iframe>
-              <div className="absolute inset-0 pointer-events-none border-[6px] border-[#0a0a0a]/20"></div>
             </div>
             
-            <div className="p-6 bg-brand-dark border border-gray-800 flex items-start gap-4">
-               <div className="text-brand-red shrink-0">
-                  <Info size={24} />
-                </div>
-                <div>
-                  <h3 className="text-white font-medium mb-1">Informations Pratiques</h3>
-                  <p className="text-gray-400 font-light text-sm">
-                    Sur place ou à emporter.<br />
-                    Réservation recommandée le soir et le week-end, merci de nous appeler pour réserver votre table.
-                  </p>
-                </div>
+            <div className="p-5 bg-white border border-brand-border rounded-sm shadow-sm flex items-start gap-3.5">
+              <div className="text-brand-gold shrink-0 mt-0.5">
+                <Info size={20} />
+              </div>
+              <div>
+                <h4 className="text-brand-dark font-semibold text-sm mb-1">Accueil & Réservations</h4>
+                <p className="text-brand-muted text-xs leading-relaxed">
+                  Sur place ou à emporter. Pour le confort de votre repas en soirée ou en groupe, nous vous conseillons de réserver votre table par téléphone au préalable.
+                </p>
+              </div>
             </div>
           </div>
 

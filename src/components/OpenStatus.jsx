@@ -27,10 +27,11 @@ const OpenStatus = () => {
       // 18h à 23h -> 1080 à 1380 minutes
       const isDinnerOpen = timeInMinutes >= 1080 && timeInMinutes < 1380;
       
-      // On vérifie le jour de la semaine à Paris
+      // Jour de la semaine à Paris
       const dayFormatter = new Intl.DateTimeFormat('fr-FR', { timeZone: 'Europe/Paris', weekday: 'long' });
       const currentDay = dayFormatter.format(now).toLowerCase();
       
+      // Fermé toute la journée le lundi
       if (currentDay === 'lundi') {
         setIsOpen(false);
       } else {
@@ -40,7 +41,6 @@ const OpenStatus = () => {
     };
 
     checkStatus();
-    // Vérifier chaque minute
     const interval = setInterval(checkStatus, 60000);
     return () => clearInterval(interval);
   }, []);
@@ -48,9 +48,15 @@ const OpenStatus = () => {
   if (loading) return null;
 
   return (
-    <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-dark border border-gray-800 rounded-full mt-2">
-      <div className={`w-2 h-2 rounded-full animate-pulse ${isOpen ? 'bg-green-500' : 'bg-red-500'}`}></div>
-      <span className="text-xs font-medium uppercase tracking-wider text-gray-300">
+    <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mt-2 shadow-sm text-xs font-semibold uppercase tracking-wider ${
+      isOpen 
+        ? 'bg-emerald-50 border-emerald-200 text-emerald-800' 
+        : 'bg-rose-50 border-rose-200 text-rose-800'
+    }`}>
+      <span className={`w-2 h-2 rounded-full ${
+        isOpen ? 'bg-emerald-500 animate-pulse' : 'bg-rose-500'
+      }`}></span>
+      <span>
         {isOpen ? 'Ouvert actuellement' : 'Fermé actuellement'}
       </span>
     </div>
@@ -58,4 +64,3 @@ const OpenStatus = () => {
 };
 
 export default OpenStatus;
-

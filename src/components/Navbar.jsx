@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from './icons';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -7,7 +7,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -16,6 +16,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Accueil', href: '#hero' },
     { name: 'Notre Histoire', href: '#history' },
+    { name: 'Galerie', href: '#gallery' },
     { name: 'La Carte', href: '#menu' },
     { name: 'Avis', href: '#reviews' },
     { name: 'Contact', href: '#contact' },
@@ -23,28 +24,36 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-brand-dark/90 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'
+      isScrolled 
+        ? 'bg-brand-cream/95 backdrop-blur-md py-3.5 shadow-md border-b border-brand-border' 
+        : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <a href="#" className="font-serif text-2xl font-bold tracking-wider text-white">
+          <a href="#" className={`font-serif text-2xl font-bold tracking-wider transition-colors ${
+            isScrolled ? 'text-brand-dark' : 'text-white'
+          }`}>
             Le Mandarin <span className="text-brand-red">Saint-Germain</span>
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-7">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href}
-                className="text-gray-200 hover:text-brand-red transition-colors text-sm uppercase tracking-widest font-medium"
+                className={`transition-colors text-xs uppercase tracking-widest font-semibold ${
+                  isScrolled 
+                    ? 'text-brand-charcoal hover:text-brand-red' 
+                    : 'text-gray-100 hover:text-brand-gold'
+                }`}
               >
                 {link.name}
               </a>
             ))}
             <a 
               href="tel:0143290714" 
-              className="px-6 py-2 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white transition-all font-medium uppercase text-sm tracking-widest"
+              className="px-5 py-2.5 bg-brand-red text-white hover:bg-brand-red-hover transition-all font-semibold uppercase text-xs tracking-widest rounded-sm shadow-sm"
             >
               Réserver
             </a>
@@ -54,32 +63,35 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-brand-red transition-colors"
+              className={`transition-colors p-1 ${
+                isScrolled ? 'text-brand-dark hover:text-brand-red' : 'text-white hover:text-brand-gold'
+              }`}
+              aria-label="Menu"
             >
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Nav */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-brand-dark/95 backdrop-blur-xl transition-all duration-300 overflow-hidden ${
-        isMobileMenuOpen ? 'max-h-96 border-t border-gray-800' : 'max-h-0'
+      <div className={`md:hidden absolute top-full left-0 w-full bg-brand-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden shadow-xl ${
+        isMobileMenuOpen ? 'max-h-96 border-b border-brand-border' : 'max-h-0'
       }`}>
-        <div className="px-4 pt-2 pb-6 space-y-2">
+        <div className="px-5 pt-3 pb-6 space-y-1">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block px-3 py-3 text-base font-medium text-gray-200 hover:text-brand-red hover:bg-gray-800/50 rounded-md transition-colors"
+              className="block px-3 py-2.5 text-sm font-semibold uppercase tracking-wider text-brand-dark hover:text-brand-red hover:bg-brand-warm rounded-sm transition-colors"
             >
               {link.name}
             </a>
           ))}
           <a 
             href="tel:0143290714" 
-            className="block w-full text-center mt-4 px-6 py-3 bg-brand-red text-white font-medium uppercase text-sm tracking-widest rounded-sm"
+            className="block w-full text-center mt-3 px-6 py-3 bg-brand-red text-white font-semibold uppercase text-xs tracking-widest rounded-sm shadow-md"
           >
             Appeler pour réserver
           </a>
@@ -90,4 +102,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

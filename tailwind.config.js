@@ -7,8 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-dark': '#121212',
-        'brand-red': '#D32F2F', // Un rouge profond et vif
+        'brand-cream': '#FBF9F5',      // Fond principal blanc cassé / crème
+        'brand-warm': '#F3ECE2',       // Fond secondaire chaud / lin
+        'brand-card': '#FFFFFF',       // Cartes blanches douces
+        'brand-dark': '#201D1A',       // Texte foncé élégant (presque noir chaud)
+        'brand-charcoal': '#423D38',   // Titres secondaires / texte fort
+        'brand-muted': '#7D746D',      // Texte secondaire / sous-titres
+        'brand-border': '#EAE4DC',     // Bordures douces chaudes
+        'brand-red': '#B91C1C',        // Rouge vermillon profond
+        'brand-red-hover': '#991B1B',  // Hover vermillon
+        'brand-gold': '#C5A059',       // Doré mat chic
+        'brand-gold-light': '#F8F3E6', // Fond léger doré
       },
       fontFamily: {
         'serif': ['"Playfair Display"', 'serif'],
@@ -27,4 +36,3 @@ export default {
   },
   plugins: [],
 }
-

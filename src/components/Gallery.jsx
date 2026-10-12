@@ -3,7 +3,7 @@ import exterieur from '../assets/exterieur.jpg';
 import bar from '../assets/bar.jpg';
 import ambiance6 from '../assets/ambiance-6.jpg';
 import vins from '../assets/vins.jpeg';
-import deco from '../assets/deco.jpg';
+import mediaImg from '../assets/Media.jpeg';
 import salade from '../assets/salade.jpg';
 import ambiance5 from '../assets/ambiance-5.jpg';
 import dessert from '../assets/dessert.jpg';
@@ -14,7 +14,7 @@ const Gallery = () => {
     { src: bar, alt: "Le bar & comptoir d'accueil" },
     { src: ambiance6, alt: "Moments de partage & verres entre amis" },
     { src: vins, alt: "Cave & sélection de vins de la maison" },
-    { src: deco, alt: "Détails & décoration raffinée" },
+    { src: mediaImg, alt: "Dîner intimiste dans notre salle feutrée" },
     { src: salade, alt: "Salade fraîcheur aux herbes asiatiques" },
     { src: ambiance5, alt: "Grande table festive garnie de spécialités" },
     { src: dessert, alt: "Douceurs & desserts asiatiques maison" },

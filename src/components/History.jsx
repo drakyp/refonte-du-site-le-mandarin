@@ -43,7 +43,7 @@ const History = () => {
               <span className="text-white font-serif text-3xl sm:text-4xl font-bold tracking-tight">1981</span>
               <div className="h-7 w-[1px] bg-brand-gold/50"></div>
               <div>
-                <span className="text-brand-gold text-xs font-bold uppercase tracking-wider block leading-tight">Plus de 40 ans</span>
+                <span className="text-white text-xs font-bold uppercase tracking-wider block leading-tight">Plus de 40 ans</span>
                 <span className="text-white text-[11px] font-medium tracking-wide block">de passion culinaire</span>
               </div>
             </div>

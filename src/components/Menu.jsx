@@ -73,7 +73,7 @@ const Menu = () => {
     {
       title: "Bœuf Lok Lak Traditionnel",
       tag: "Spécialité Maison",
-      description: "Dés de bœuf ultra-tendres marinés et caramélisés à feu vif, servis avec son riz tomaté, un œuf au plat et la sauce poivre noir & citron vert.",
+      description: "Dés de bœuf ultra-tendres marinés et caramélisés à feu vif au wok, servis sur un lit de salade croquante, oignons et tomates fraîches.",
       image: loklak,
       badge: "Iconique",
       category: "plats"
@@ -121,7 +121,7 @@ const Menu = () => {
       items: [
         { name: "Canard Laqué Traditionnel", detail: "Rôti avec sa peau croustillante et sauce prune maison" },
         { name: "Bœuf Sauté au Basilic Thaï sur Plaque", detail: "Saisi à feu vif, basilic thaï frais et oignons doux" },
-        { name: "Bœuf Lok Lak au Riz Tomaté", detail: "Dés de bœuf marinés, œuf au plat & sauce poivre-citron vert" },
+        { name: "Bœuf Lok Lak Traditionnel", detail: "Dés de bœuf marinés et caramélisés au wok, salade croquante, oignons & tomates" },
         { name: "Pad Thaï Maison (Poulet ou Crevettes)", detail: "Nouilles de riz sautées au wok, soja, cacahuètes & citron vert" },
         { name: "Porc au Caramel à la Vietnamienne", detail: "Mijoté lentement dans un jus réduit au sucre de canne" },
         { name: "Porc à la Sauce Aigre-Douce", detail: "Morceaux dorés, ananas frais, poivrons et sauce brillante" },
@@ -144,50 +144,56 @@ const Menu = () => {
     }
   ];
 
-  // Menus et Formules (avec contenu détaillé)
+  // Menus et Formules (avec contenu détaillé - SANS PRIX)
   const formulas = [
     {
       name: "Menu Express",
-      subtitle: "Midi du Mardi au Vendredi",
-      tag: "Pause Déjeuner",
-      content: [
-        "Entrée du moment (Nems ou Potage)",
-        "Plat du jour au choix (Poulet, Bœuf ou Porc)",
-        "Riz nature parfumé au jasmin"
+      subtitle: "Tous les midis, du mardi au vendredi (sauf fériés)",
+      tag: "Déjeuner Express",
+      choice: "Entrée + Plat ou Plat + Dessert",
+      sections: [
+        { label: "Entrée au choix", items: "Salade chinoise au poulet, Nems chauds, Potage pékinois ou Rouleau de printemps" },
+        { label: "Plat au choix", items: "Poulet Mandarin, Bœuf aux oignons, Porc sauce aigre-douce ou Plat du jour" },
+        { label: "Accompagnement", items: "Riz nature ou Riz cantonais" },
+        { label: "Dessert au choix", items: "Lychees, Nougats mous au sésame ou Glace (une boule)" }
       ],
       desc: "Idéal pour un déjeuner d'affaires rapide, savoureux et équilibré."
     },
     {
       name: "Menu Vapeur",
-      subtitle: "Légèreté & Finesse",
-      tag: "Spécialité Dim Sum",
-      content: [
-        "Grand panier vapeur assorti (8 pièces)",
-        "Riz nature au jasmin ou Riz cantonais",
-        "Thé au jasmin traditionnel ou Dessert maison"
+      subtitle: "Tous les midis, du mardi au vendredi (sauf fériés)",
+      tag: "Spécialité Vapeur",
+      choice: "Formule Vapeur Complète",
+      sections: [
+        { label: "Entrée / Vapeurs", items: "Assortiment de bouchées vapeur (Crevettes, Porc, Bœuf)" },
+        { label: "Accompagnement", items: "Riz cantonais" }
       ],
       desc: "Une cuisson saine à la vapeur préservant toutes les textures et arômes."
     },
     {
       name: "Menu Thaï",
-      subtitle: "Voyage à Bangkok",
-      tag: "Saveurs Aromatiques",
-      content: [
-        "Salade de papaye verte ou Soupe Tom Yam",
-        "Poulet Curry Coco ou Bœuf Sauté au Basilic",
-        "Riz gluant en panier bambou ou Riz nature"
+      subtitle: "Disponible midi & soir (sur place uniquement)",
+      tag: "Tradition Thaïe",
+      choice: "Entrée + Plat ou Plat + Dessert",
+      sections: [
+        { label: "Entrée au choix", items: "Salade thaïlandaise, Soupe de poulet citronnelle ou Nems chauds" },
+        { label: "Plat au choix", items: "Poulet sauté au basilic, Brochette bœuf thaï, Poulet au citron ou Porc aigre-doux" },
+        { label: "Accompagnement", items: "Riz nature ou Riz cantonais" },
+        { label: "Dessert au choix", items: "Lychees, Nougats mous au sésame ou Glace (une boule)" }
       ],
-      desc: "L'équilibre parfait entre épices douces, herbes fraîches et lait de coco."
+      desc: "L'équilibre parfait entre épices douces, herbes fraîches et traditions thaïes."
     },
     {
       name: "Formule Dégustation",
-      subtitle: "L'Héritage Lam",
-      tag: "L'Expérience Complète",
-      content: [
-        "Assortiment d'entrées royales au choix",
-        "Canard aux 5 Parfums ou Bœuf Lok Lak sur fonte",
-        "Riz cantonais spécial de la maison",
-        "Dessert raffiné au choix"
+      subtitle: "L'Héritage Lam — Tout inclus",
+      tag: "Menu Prestige",
+      choice: "Grand Festin pour la table",
+      isPrestige: true,
+      sections: [
+        { label: "Entrées", items: "Soupe crevettes citronnelle, Salade bœuf citronnelle, Assortiment vapeur et Nems chauds" },
+        { label: "Plats", items: "Bœuf sauté basilic sur fonte, Crevettes ail & poivre, Canard aux 5 parfums et Poisson du marché" },
+        { label: "Accompagnements", items: "Riz thaï aux crevettes, Nouilles sautées maison ou Riz nature" },
+        { label: "Desserts", items: "Dessert du jour, Salade de fruits maison ou Glace au thé vert" }
       ],
       desc: "Le voyage ultime à travers les créations signatures de notre famille depuis 1981."
     }
@@ -338,10 +344,19 @@ const Menu = () => {
             {formulas.map((form, index) => (
               <div 
                 key={index} 
-                className="p-6 bg-white border border-brand-border rounded-sm flex flex-col justify-between hover:border-brand-gold hover:shadow-md transition-all"
+                className={`p-6 rounded-sm flex flex-col justify-between transition-all duration-300 relative ${
+                  form.isPrestige 
+                    ? 'bg-gradient-to-b from-[#FFFDF9] to-white border-2 border-brand-gold/80 shadow-md hover:shadow-xl hover:border-brand-gold' 
+                    : 'bg-white border border-brand-border hover:border-brand-gold hover:shadow-md'
+                }`}
               >
+                {form.isPrestige && (
+                  <div className="absolute -top-3 right-4 bg-brand-gold text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full shadow-sm">
+                    Signature
+                  </div>
+                )}
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
+                  <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-brand-gold">
                       {form.tag}
                     </span>
@@ -350,21 +365,31 @@ const Menu = () => {
                   <h3 className="font-serif text-xl text-brand-dark font-bold mb-1">
                     {form.name}
                   </h3>
-                  <span className="text-[11px] text-brand-muted italic block mb-4 pb-3 border-b border-brand-border">
+                  <span className="text-[11px] text-brand-muted italic block mb-3">
                     {form.subtitle}
                   </span>
 
-                  <ul className="space-y-2.5 mb-6">
-                    {form.content.map((dish, i) => (
-                      <li key={i} className="text-brand-charcoal text-xs font-medium flex items-start gap-2">
-                        <span className="text-brand-red font-bold text-xs mt-0.5">✓</span>
-                        <span className="leading-snug">{dish}</span>
-                      </li>
+                  {form.choice && (
+                    <div className="inline-block px-2.5 py-1 rounded bg-brand-warm/90 border border-brand-border text-brand-red text-[11px] font-semibold mb-4">
+                      {form.choice}
+                    </div>
+                  )}
+
+                  <div className="space-y-3.5 mb-6 pt-2 border-t border-brand-border/60">
+                    {form.sections.map((sec, i) => (
+                      <div key={i}>
+                        <span className="font-bold text-brand-dark uppercase tracking-wider text-[10px] block mb-0.5 text-brand-gold">
+                          {sec.label} :
+                        </span>
+                        <p className="text-brand-charcoal text-xs font-normal leading-relaxed">
+                          {sec.items}
+                        </p>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
-                <div className="pt-3 border-t border-brand-border">
+                <div className="pt-3 border-t border-brand-border mt-auto">
                   <p className="text-[11px] text-brand-muted italic">
                     {form.desc}
                   </p>

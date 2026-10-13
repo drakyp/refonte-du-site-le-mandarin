@@ -45,3 +45,11 @@ Si vous ajoutez des images avec des noms différents, n'oubliez pas d'aller modi
 Si vous devez mettre à jour le numéro de téléphone ou rajouter un lien vers une plateforme de réservation externe (ex: TheFork) :
 - **Numéro de téléphone :** Cherchez le lien `href="tel:0143290714"` dans `Navbar.jsx`, `Hero.jsx` et `Contact.jsx`.
 - **Lien de réservation (futur) :** Si vous souhaitez que le bouton "Réserver" pointe vers un site au lieu de lancer un appel, remplacez simplement `href="tel:0143290714"` par `href="https://www.le-lien-de-votre-partenaire.com"` dans ces mêmes fichiers.
+
+---
+
+## 📊 Analyse du Trafic & Tracking
+
+Le site intègre **Google Tag Manager (GTM)** directement dans [`index.html`](index.html) (scripts dans `<head>` et `<body>`). 
+
+Cela permet de brancher et gérer les outils de suivi d'audience (ex: Google Analytics 4, suivi des clics d'appels et réservations) directement depuis l'interface en ligne sans avoir à retoucher le code du projet.

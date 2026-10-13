@@ -48,8 +48,8 @@ Si vous devez mettre à jour le numéro de téléphone ou rajouter un lien vers 
 
 ---
 
-## 📊 Analyse du Trafic & Tracking
+## 📊 Analyse du Trafic & Statistiques
 
-Le site intègre **Google Tag Manager (GTM)** directement dans [`index.html`](index.html) (scripts dans `<head>` et `<body>`). 
+Le site intègre la balise officielle **Google Analytics (gtag.js)** directement dans la section `<head>` de [`index.html`](index.html).
 
-Cela permet de brancher et gérer les outils de suivi d'audience (ex: Google Analytics 4, suivi des clics d'appels et réservations) directement depuis l'interface en ligne sans avoir à retoucher le code du projet.
+Cela permet de mesurer le trafic, les visites et les interactions sur le site directement depuis votre tableau de bord Google Analytics.

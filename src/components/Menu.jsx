@@ -111,7 +111,7 @@ const Menu = () => {
         { name: "Ha Kao aux Crevettes", detail: "Raviolis translucides farcis aux crevettes sauvages" },
         { name: "Siu Mai au Porc & Champignons", detail: "Bouchées tendres cuites en paniers de bambou" },
         { name: "Raviolis Végétariens aux Légumes Croquants", detail: "Chou chinois, carottes, champignons parfumés" },
-        { name: "Grand Assortiment Vapeur Maison (8 pièces)", detail: "Dégustation des spécialités vapeur de la maison" }
+        { name: "Grand Assortiment Vapeur Maison", detail: "Dégustation des spécialités vapeur de la maison" }
       ]
     },
     {

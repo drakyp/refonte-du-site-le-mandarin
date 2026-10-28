@@ -22,16 +22,18 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const isSolidNav = isScrolled || isMobileMenuOpen;
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled 
+      isSolidNav 
         ? 'bg-brand-cream/95 backdrop-blur-md py-3.5 shadow-md border-b border-brand-border' 
         : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <a href="#" className={`font-serif text-2xl font-bold tracking-wider transition-colors ${
-            isScrolled ? 'text-brand-dark' : 'text-white'
+            isSolidNav ? 'text-brand-dark' : 'text-white'
           }`}>
             Le Mandarin <span className="text-brand-red">Saint-Germain</span>
           </a>
@@ -43,7 +45,7 @@ const Navbar = () => {
                 key={link.name} 
                 href={link.href}
                 className={`transition-colors text-xs uppercase tracking-widest font-semibold ${
-                  isScrolled 
+                  isSolidNav 
                     ? 'text-brand-charcoal hover:text-brand-red' 
                     : 'text-gray-100 hover:text-brand-gold'
                 }`}
@@ -64,7 +66,7 @@ const Navbar = () => {
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`transition-colors p-1 ${
-                isScrolled ? 'text-brand-dark hover:text-brand-red' : 'text-white hover:text-brand-gold'
+                isSolidNav ? 'text-brand-dark hover:text-brand-red' : 'text-white hover:text-brand-gold'
               }`}
               aria-label="Menu"
             >
@@ -75,7 +77,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Nav */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-brand-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden shadow-xl ${
+      <div className={`md:hidden absolute top-full left-0 w-full bg-brand-cream backdrop-blur-xl transition-all duration-300 overflow-hidden shadow-xl ${
         isMobileMenuOpen ? 'max-h-96 border-b border-brand-border' : 'max-h-0'
       }`}>
         <div className="px-5 pt-3 pb-6 space-y-1">
